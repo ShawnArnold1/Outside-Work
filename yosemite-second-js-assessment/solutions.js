@@ -220,11 +220,14 @@ var upperCaseLastNames = function(arrayOfObjects)
 
 
 
+var array = [1, 4, 6, 8, 99, 102, 55, 204, 730];
 
 
 
-
-
+var getHighest = function(array)
+{
+    console.log(Math.max(null, array));
+}
 
 
 
