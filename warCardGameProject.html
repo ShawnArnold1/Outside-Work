@@ -1,0 +1,56 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>
+    War Cards!
+</title>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="start"></div>
+        <div id="message"></div>
+    <div id="board">
+        <div id="player1" class="players">
+            <div class="score"></div>
+            <div class="hand"></div>
+        </div>
+        <div id="player2">
+            <div class="score"></div>
+            <div class="hand"></div>
+        </div>
+    </div>
+        <div id="action">
+            <button id="btnBattle" type="button" class="btn">
+                Fight!
+            </button>
+        </div>
+    </div>
+    <script>
+        var suits = ["spades", "hearts", "clubs", "diams"];
+        var cardFace = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"];
+        var cards = [];
+        var players = [[], []];
+        var firstRun = true;
+        var fightButton = document.querySelector("#btnBattle");
+        
+        fightButton.addEventListener('click', battle);
+        
+        function battle()
+        {
+            if(firstRun)
+            {
+                firstRun = false;
+                buildCards();
+            }
+            console.log('You clicked me!');
+        }
+        
+        function buildCards()
+        {
+            cards = [];
+            for(s in suits)
+        }
+    </script>
+</body>
+</html>
