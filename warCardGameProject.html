@@ -36,6 +36,7 @@
                 let cards = [];
                 let players = [[], []];
                 let firstRun = true;
+                let gameOver = false;
                 let fightButton = document.querySelector("#btnBattle");
 
                 fightButton.addEventListener('click', battle);
@@ -46,12 +47,25 @@
                     {
                         firstRun = false;
                         buildCards();
+                        shuffleArray(cards);
+                        dealCards(cards);
                     }
-                    shuffleArray(cards);
-                    console.log(shuffleArray(cards))
+                    attack();
                     console.log('Works');
                 }
 
+                function attack()
+                {
+                    if(!gameOver)
+                    {
+                        let card1 = players[0].shift();
+                        let card2 = players[1].shift();
+                        let pot = [card1, card2]
+                    
+                        // Check Winners
+                        // Update Scores
+                    }
+                }
 
                 function buildCards()
                 {
@@ -70,9 +84,41 @@
                             cards.push(card);
                         }
                     }
-                    console.log(cards);
+                        console.log(cards);
                 }
 
+                function dealCards(array)
+                {
+                    for(var i = 0; i < array.length; i++)
+                    {
+                        // swaps between remainder 0 and 1, which signifies player[0 OR 1], and then pushes that onto parameter,(array), which
+                        // is cards which is an array, at the index of for loop [i]
+                        var m = i % 2;
+                        players[m].push(array[i])
+                        }
+                    console.log(players)
+                    }
+                
+                
+                //
+                // function dealCards(array)
+                // {
+                //     for(var i = 0; i < array.length; i++)
+                //     {
+                //         if(i % 2 === 0 )
+                //         {
+                //             players[0].push(array[i]);
+                //         }
+                //         else
+                //         {
+                //             players[1].push(array[i]);
+                //         }
+                //
+                //     }
+                //     console.log(players);
+                // }
+                //
+                
                 function shuffleArray(array)
                 {
                     for(let x = array.length -1; x > 0; x--)
@@ -84,11 +130,11 @@
                         array[ii] = temp;
 
                     }
-                    // console.log(array);
+                    console.log(cards);
                     return array;
                 }
             });
-        
         </script>
+        
     </body>
 </html>
